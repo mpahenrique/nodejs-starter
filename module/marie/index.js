@@ -12,14 +12,19 @@ function index () {
 		Marie.prototype[method] = require(path.join(__dirname, method));		
     }
 
-    // testes
+    // inicio testes
     var a = new Marie();
         a
-        .route('/index.html', ()=>{console.info("ROTA DE", "index.html");})
+        .use(['./testes/logs', function(req, res){
+            req.fulanoDeTal();
+            req.ciclano = 'maoe';
+        }])
+        .use(function(req){
+            console.info(7777777, req.ciclano);
+        })
+        .route('/index.html', (req, res)=>{console.info("ROTA DE", "index.html");})
         .listen(3000);
-    // testes
-
-    console.info(Marie.prototype);
+    // fim testes
 
 	return new Marie;
 

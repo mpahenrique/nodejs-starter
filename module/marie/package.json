@@ -19,6 +19,7 @@
   "application": {
     "methods": [
       "util",
+      "use",
       "load",
       "route",
       "listen"

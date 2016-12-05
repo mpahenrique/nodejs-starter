@@ -1,5 +1,12 @@
 function Route (uri, middleware, fn) {
 
+    // if(fn) {
+    //     var temMiddle = function() {
+            
+    //         fn(middleware());
+    //     }
+    // }
+
     if(!uri) return this;
 
     /***************** Dependencies *****************/

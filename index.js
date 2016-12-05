@@ -14,9 +14,8 @@ app
     .route('/index.html', ()=>{
         console.info("ROTA DE", "index.html", this);
     })
-    .route('/oi.html', ()=>{
-        console.info("ROTA DE", "oi.html", this);
-    })
+    .route('/protegido', verificaLogin, ()=>{})
+    .use('cookie-parser')
 	.listen(applicationData.port);
 
 

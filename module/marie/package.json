@@ -1,0 +1,30 @@
+{
+  "name": "marie",
+  "version": "0.0.0",
+  "description": "NodeJs Starter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/HenriqueAveiro/nodejs-starter.git"
+  },
+  "author": [
+    "Felipe Sacramento",
+    "Henrique Aveiro"
+  ],
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/HenriqueAveiro/nodejs-starter#readme",
+  "application": {
+    "methods": [
+      "util",
+      "load",
+      "route",
+      "listen"
+    ]
+  },
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
+}

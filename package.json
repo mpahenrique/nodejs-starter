@@ -1,7 +1,7 @@
 {
-  "name": "nodejs-starter",
+  "name": "nodejs-starter-sample",
   "version": "0.0.0",
-  "description": "NodeJs Starter",
+  "description": "NodeJs Starter Sample",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,5 +12,15 @@
   },
   "author": ["Felipe Sacramento", "Henrique Aveiro"],
   "license": "ISC",
-  "homepage": "https://bitbucket.org/HenriqueAveiro/nodejs-starter#readme"
+  "homepage": "https://bitbucket.org/HenriqueAveiro/nodejs-starter#readme",
+    "application": {
+    "port" : 3000,
+    "paths": {
+      "models": "/models",
+      "views": "/views",
+      "controllers": "/controllers",
+      "middlewares": "/middlewares",
+      "routes": "/routes"
+    }
+  }
 }

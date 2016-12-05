@@ -1,25 +1,20 @@
-const applicationData = require('./package.json')
-,     marie           = require('./modules/marie')
-,     app             = marie();
+'use strict';
 
-/*************************
-*	Iniciando módulos    */
+const config  = require('./package.json').application
+,     path    = require('path')
+,     modules = config.paths;
 
-app
-	// .load(path.join(__dirname, applicationData.path.routes     ))
-	// .load(path.join(__dirname, applicationData.path.middlewares))
-	// .load(path.join(__dirname, applicationData.path.models     ))
-	// .load(path.join(__dirname, applicationData.path.views      ))
-	// .load(path.join(__dirname, applicationData.path.controllers))
-    .route('/index.html', ()=>{
-        console.info("ROTA DE", "index.html", this);
-    })
-    .route('/protegido', verificaLogin, ()=>{})
-    .use('cookie-parser')
-	.listen(applicationData.port);
+class nodejsStarter {};
 
+nodejsStarter.prototype.loader = function(modules){
+    if(!modules || typeof modules !== 'object') return;
 
-// app.init();
-// require('./routes').init();
+    for(let module in modules){
+        this[module] = require(path.join(__dirname, module));
+    }
+}
 
-// http.createServer().listen();
+var myApp = new nodejsStarter();    
+    myApp.loader(modules);
+
+console.info(myApp);

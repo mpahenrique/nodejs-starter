@@ -1,4 +1,4 @@
-const init = () => {
+function init () {
 
 	/***************** Dependencies *****************/
 	const fs     = require('fs')

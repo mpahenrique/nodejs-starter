@@ -14,7 +14,14 @@ nodejsStarter.prototype.loader = function(modules){
     }
 }
 
-var myApp = new nodejsStarter();    
-    myApp.loader(modules);
+const nodejsStarter = new nodejsStarter()
+,     myApp         = nodejsStarter.init();
+    
+    myApp.
+        // .use(express()) // default "framework", or
+        .use('express', express())
+        .loader(modules)
+        .listen(3000);
 
-console.info(myApp);
+
+        myApp.currentFramework

@@ -15,12 +15,13 @@
   "homepage": "https://bitbucket.org/HenriqueAveiro/nodejs-starter#readme",
     "application": {
     "port" : 3000,
-    "paths": {
+    "modules": {
       "models": "/models",
       "views": "/views",
       "controllers": "/controllers",
       "middlewares": "/middlewares",
-      "routes": "/routes"
+      "routes": "/routes",
+      "util" : "/util"
     }
   }
 }

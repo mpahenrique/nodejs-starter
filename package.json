@@ -10,18 +10,25 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/HenriqueAveiro/nodejs-starter.git"
   },
-  "author": ["Felipe Sacramento", "Henrique Aveiro"],
+  "author": [
+    "Felipe Sacramento",
+    "Henrique Aveiro"
+  ],
   "license": "ISC",
   "homepage": "https://bitbucket.org/HenriqueAveiro/nodejs-starter#readme",
-    "application": {
-    "port" : 3000,
+  "application": {
+    "port": 3000,
     "modules": {
       "models": "/models",
       "views": "/views",
       "controllers": "/controllers",
       "middlewares": "/middlewares",
       "routes": "/routes",
-      "util" : "/util"
+      "util": "/util"
     }
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "underscore": "^1.8.3"
   }
 }

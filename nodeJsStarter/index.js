@@ -7,7 +7,7 @@ class nodeJsStarter {};
     ,     _    = require('underscore');
 /************************************************/
 /***************** Main Methods *****************/
-    var fs      = require('fs')
+    const fs      = require('fs')
     ,   methods = fs.readdirSync(__dirname);
 
     methods.forEach(function (method) {

@@ -18,13 +18,12 @@ function use(method, module){
             this[method] = module;
             return this;
         } else {
-            return runIfFunction(require(path.join(__dirname, method)));
+            return runIfFunction(require( method.match(/\//) ? method : path.join(__dirname, method)));
         }
 
     if(typeof method === 'function') return runIfFunction(method);
 
-    _.extend(this, method);
-
+    _.extend(this, method); // method = Object
 
     return this;
 }

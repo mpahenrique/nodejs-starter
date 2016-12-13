@@ -7,12 +7,5 @@ const config  = require('./package.json').application
 
 app
     .use('express', express())
-    .use(function(){
-        console.info(9999, this);
-        // this.passport = function oi(){};
-    });
-    // .load(config.modules)
+    .load(config.modules)
     // .listen(config.port);
-
-
-// console.info(app);

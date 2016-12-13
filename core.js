@@ -1,30 +1,9 @@
-'use strict';
+function core(pipeData){
 
-/***************** Dependencies *****************/
-    const _ = require('underscore');
-/************************************************/
+    console.info(8989898);
 
-class nodejsStarter {};
+    pipeData.wcore = 888888888888;
 
-nodejsStarter.prototype.init = function(){
-    console.info('Application init', nodejsStarter);
-    require(path.join(__dirname, config.modules.util))(nodejsStarter);
-    return nodejsStarter;
 }
 
-nodejsStarter.prototype.util.load = function(modules){ // Will receive an object, path or array of paths/objects
-    if(!modules || typeof modules !== 'object') return;
-
-    for(let module in modules){
-        this[module] = require(path.join(__dirname, module));
-    }
-}
-
-nodejsStarter.prototype.util.use = function(method, module){
-    if(!method && !module) return;
-
-    if(typeof method === 'string')
-        return this.prototype[method] = module;
-
-    _.extend(this.prototype, method);
-}
+module.exports = core;

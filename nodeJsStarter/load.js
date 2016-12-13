@@ -2,15 +2,22 @@
 
 function load (modules) {  // Will receive an object, path or array of paths/objects
 
-    console.info("LOAD", this);
+    if(!modules) throw new Error('A module is required');
 
-    if(!modules) return;
+    this.modules = this.modules || {};
+
+    /***************** Dependencies *****************/
+    const path      = require('path')
+    ,     consign   = require('consign')();
+    /************************************************/
 
     for(let module in modules){
-        this.prototype[module] = require(path.join(__dirname, module));
+        consign
+            .include(modules[module]);
     }
 
-    return this;
+    consign.into(this.modules);
+
 }
 
-module.exports = load;
+module.exports = load;  

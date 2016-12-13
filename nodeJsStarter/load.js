@@ -18,6 +18,8 @@ function load (modules) {  // Will receive an object, path or array of paths/obj
 
     consign.into(this.modules);
 
+    return this;
+
 }
 
 module.exports = load;  

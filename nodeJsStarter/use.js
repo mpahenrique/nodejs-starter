@@ -15,6 +15,7 @@ function use(method, module){
 
     if(typeof method === 'string')
         if (module) {
+            this.currentFramework = method;
             this[method] = module;
             return this;
         } else {

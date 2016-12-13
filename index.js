@@ -8,4 +8,4 @@ const config  = require('./package.json').application
 app
     .use('express', express())
     .load(config.modules)
-    // .listen(config.port);
+    .listen(config.port);

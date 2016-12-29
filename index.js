@@ -1,7 +1,7 @@
 'use strict';
 
 const config  = require('./package.json').application
-,     app     = require('./nodeJsStarter') // Não executar, para poder configurar o prototype com métodos customizados
+,     app     = require('./nodeJsStarter')
 ,     express = require('express');
 
 

@@ -8,18 +8,16 @@ function load (modules) {  // Will receive an object, path or array of paths/obj
 
     /***************** Dependencies *****************/
     const path      = require('path')
-    ,     consign   = require('consign')();
+    ,     recursive = require('../util/recursive')
+    ,     _         = require('underscore');
     /************************************************/
 
     for(let module in modules){
-        consign
-            .include(modules[module]);
+        this.modules[module] = {};
+        _.extend(this.modules[module], recursive.require(path.resolve(__dirname, '../' + modules[module])));
     }
 
-    consign.into(this.modules);
-
     return this;
-
 }
 
-module.exports = load;  
+module.exports = load;

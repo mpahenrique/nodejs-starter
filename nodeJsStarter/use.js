@@ -1,6 +1,6 @@
 'use strict';
 
-function use(method, module){
+function use(method, module, isCoreModule){
 
     /***************** Dependencies *****************/
     const _    = require('underscore')
@@ -15,7 +15,7 @@ function use(method, module){
 
     if(typeof method === 'string')
         if (module) {
-            this.currentFramework = method;
+            if(isCoreModule) this.coreModule = method;
             this[method] = module;
             return this;
         } else {

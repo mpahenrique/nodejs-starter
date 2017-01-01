@@ -1,11 +1,12 @@
 'use strict';
 
-const config  = require('./package.json').application
-,     app     = require('./nodeJsStarter')
-,     express = require('express');
-
+const config    = require('./package.json').application
+,     recursive = require('./util/recursive')
+,     app       = require('./nodeJsStarter')
+,     express   = require('express');
 
 app
-    .use('express', express())
-    .load(config.modules)
-    .listen(config.port);
+    .use('express', express(), true) // core module
+    .load(config.modules) // load modules
+    .use((self) => { recursive.run(self.modules.routes, self); }) // load and run routes
+    .listen(config.port); // listen http://dns:port

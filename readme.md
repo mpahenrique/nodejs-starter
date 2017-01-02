@@ -10,8 +10,25 @@ Using NodeJS Starter you can:
 ### Dependencies
 NodeJS Starter needs:
 * [Underscore] - Underscore is a JavaScript library that provides a whole mess of useful functional programming helpers without extending any built-in objects.
+* [RecursiveJS] - Load and run modules recursively.
+#### Dependencies if using sample project:
 * [Express] - Fast, unopinionated, minimalist web framework for Node.js.
-* [RecursiveJS] - Load and run modules recursively
+
+### Installation
+#### Default Project
+```sh
+git clone https://github.com/mpahenrique/nodejs-starter.git
+```
+#### Sample Project (using [Express])
+```sh
+git clone https://github.com/mpahenrique/nodejs-starter.git
+cd nodejs-starter && git checkout master-sample-project
+```
+#### Both
+##### In nodejs-starter directory:
+```sh
+$ npm install
+```
 
 ### Structure
 ```sh
@@ -35,9 +52,10 @@ views/            # Views
 └── sample        ## View to /sample*
     └── index.js  ### Main file that show the information received and processed
 
-util/			  # Util methods
-└── recursive.js  ## A method that allows to require a entire folder (see recursiveRequire)
+util/        # Util methods
+└── index.js       ##  Main file with util methods to the project (see function someMethod) 
 ```
+
 ### Starting
 ```js
 'use strict';
@@ -51,6 +69,23 @@ app
     .use((self) => { recursive.run(self.modules.routes, self); }) // run routes
     .listen(config.port); // listen http://dns:port
 ```
+
+### Starting with sample project
+```js
+'use strict';
+
+const config    = require('./package.json').application
+,     recursive = require('recursivejs')
+,     express   = require('express')
+,     app       = require('./nodeJsStarter');
+
+app
+    .use('express', express(), true) // core module
+    .load(config.modules) // load modules
+    .use((self) => { recursive.run(self.modules.routes, self); }) // load and run routes
+    .listen(config.port); // listen http://dns:port
+```
+
 
    [Underscore]: <https://www.npmjs.com/package/underscore>
    [Express]: <https://www.npmjs.com/package/express>

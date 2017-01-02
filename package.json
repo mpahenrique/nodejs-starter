@@ -1,6 +1,6 @@
 {
   "name": "nodejs-starter-sample",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "description": "NodeJs Starter Sample",
   "main": "index.js",
   "scripts": {

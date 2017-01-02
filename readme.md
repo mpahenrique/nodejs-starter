@@ -11,23 +11,12 @@ Using NodeJS Starter you can:
 NodeJS Starter needs:
 * [Underscore] - Underscore is a JavaScript library that provides a whole mess of useful functional programming helpers without extending any built-in objects.
 * [RecursiveJS] - Load and run modules recursively.
-
-#### Dependencies if using sample project:
 * [Express] - Fast, unopinionated, minimalist web framework for Node.js.
 
 ### Installation
-#### Default Project
 ```sh
-git clone https://github.com/mpahenrique/nodejs-starter.git
-```
-#### Sample Project (using [Express])
-```sh
-git clone https://github.com/mpahenrique/nodejs-starter.git
-cd nodejs-starter && git checkout master-sample-project
-```
-#### Both
-##### In nodejs-starter directory:
-```sh
+$ git clone https://github.com/mpahenrique/nodejs-starter.git
+$ cd nodejs-starter
 $ npm install
 ```
 
@@ -58,20 +47,6 @@ util/             # Util methods
 ```
 
 ### Starting
-```js
-'use strict';
-
-const config    = require('./package.json').application
-,     recursive = require('recursive')
-,     app       = require('./nodeJsStarter');
-
-app
-    .load(config.modules) // load modules
-    .use((self) => { recursive.run(self.modules.routes, self); }) // run routes
-    .listen(config.port); // listen http://localhost:port. Default: 3000
-```
-
-### Starting with sample project
 ```js
 'use strict';
 

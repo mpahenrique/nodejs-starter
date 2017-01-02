@@ -11,6 +11,7 @@ Using NodeJS Starter you can:
 NodeJS Starter needs:
 * [Underscore] - Underscore is a JavaScript library that provides a whole mess of useful functional programming helpers without extending any built-in objects.
 * [RecursiveJS] - Load and run modules recursively.
+
 #### Dependencies if using sample project:
 * [Express] - Fast, unopinionated, minimalist web framework for Node.js.
 
@@ -52,8 +53,8 @@ views/            # Views
 └── sample        ## View to /sample*
     └── index.js  ### Main file that show the information received and processed
 
-util/        # Util methods
-└── index.js       ##  Main file with util methods to the project (see function someMethod) 
+util/             # Util methods
+└── index.js      ##  Main file with util methods to the project (see function someMethod) 
 ```
 
 ### Starting
@@ -67,7 +68,7 @@ const config    = require('./package.json').application
 app
     .load(config.modules) // load modules
     .use((self) => { recursive.run(self.modules.routes, self); }) // run routes
-    .listen(config.port); // listen http://dns:port
+    .listen(config.port); // listen http://localhost:port. Default: 3000
 ```
 
 ### Starting with sample project
@@ -83,9 +84,10 @@ app
     .use('express', express(), true) // core module
     .load(config.modules) // load modules
     .use((self) => { recursive.run(self.modules.routes, self); }) // load and run routes
-    .listen(config.port); // listen http://dns:port
+    .listen(config.port); // listen http://localhost:port. Default: 3000
 ```
 
 
    [Underscore]: <https://www.npmjs.com/package/underscore>
    [Express]: <https://www.npmjs.com/package/express>
+   [RecursiveJS]: <https://github.com/mpahenrique/recursive>

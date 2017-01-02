@@ -1,7 +1,7 @@
 'use strict';
 
 const config    = require('./package.json').application
-,     recursive = require('./util/recursive')
+,     recursive = require('recursivejs')
 ,     app       = require('./nodeJsStarter')
 ,     express   = require('express');
 

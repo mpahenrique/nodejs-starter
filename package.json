@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "express": "^4.14.0",
+    "recursivejs": "git+https://github.com/mpahenrique/recursivejs.git",
     "underscore": "^1.8.3"
   }
 }

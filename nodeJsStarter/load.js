@@ -8,7 +8,7 @@ function load (modules) {  // Will receive an object, path or array of paths/obj
 
     /***************** Dependencies *****************/
     const path      = require('path')
-    ,     recursive = require('../util/recursive')
+    ,     recursive = require('recursivejs')
     ,     _         = require('underscore');
     /************************************************/
 
